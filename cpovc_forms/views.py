@@ -83,7 +83,7 @@ def validate_serialnumber(person_id, subcounty, serial_number):
             serial_number = 'CCO/' + \
                 str(county) + '/' + str(subcounty_code) + \
                 '/5/29/' + str(index) + '/' + str(year)
-    except Exception, e:
+    except Exception as e:
         raise e
     return str(serial_number)
 
@@ -118,7 +118,7 @@ def generate_serialnumber(request):
 
             # print 'serial_number >> %s' % serial_number
 
-    except Exception, e:
+    except Exception as e:
         raise e
     return JsonResponse(jsonCaseSerialNumber, content_type='application/json',
                         safe=False)
@@ -371,7 +371,7 @@ def usersubcounty_lookup(request):
             for subcounty_id in subcounty_ids:
                 jsonSubcountyResults.append({'area_id': subcounty_id,
                                              'area_name': translate_geo(subcounty_id)})
-    except Exception, e:
+    except Exception as e:
         raise e
     return JsonResponse(jsonSubcountyResults, content_type='application/json',
                         safe=False)
