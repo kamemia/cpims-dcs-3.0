@@ -1,4 +1,4 @@
-from django.core.urlresolvers import reverse
+from django.url import reverse
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.contrib import messages
